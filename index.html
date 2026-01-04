@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لمعة برو</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="blue log.png">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= Navbar ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+ 
+  </div>
+</nav>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+
+      <div class="col-lg-6 text-white">
+        <!-- أضفت هذا الجزء للشعار -->
+       <div class="logo-container">
+  <img src="white logo.png" alt="Logo" class="logo-img">
+</div>
+        <h1 class="fw-bold display-3 mb-3">لمعة برو</h1>
+        <p class="lead mb-4">أفضل مغسلة سيارات احترافية</p>
+
+        <div class="d-flex gap-3 flex-wrap">
+            <a href="booking.html" class="btn btn-gold btn-lg rounded-pill">احجز الآن</a>
+            <a href="track.html" class="btn btn-outline-light btn-lg rounded-pill">تتبع سيارتك</a>
+        </div>
+      
+      <div class="col-lg-6 text-center">
+        <img
+          src="car.png"
+          class="img-fluid rounded-4 shadow-lg"
+          alt="Car Wash">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= Packages ================= -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+         <div class="package-card basic text-center" onclick="location.href='basic.html'" style="cursor:pointer;">
+              <i class="fa-solid fa-car fa-2x mb-3"></i>
+              <h5 class="fw-bold">أساسي</h5>
+              <p class="mb-0">غسيل خارجي</p>
+         </div>
+       </div>
+
+      <div class="col-md-4">
+          <div class="package-card gold text-center" onclick="location.href='golden.html'" style="cursor:pointer;">
+             <i class="fa-solid fa-star fa-2x mb-3"></i>
+             <h5 class="fw-bold">ذهبي</h5>
+              <p class="mb-0">خارجي + داخلي</p>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+           <div class="package-card vip text-center text-white" 
+            onclick="location.href='VIP.html'" 
+              style="cursor:pointer;">
+             <i class="fa-solid fa-crown fa-2x mb-3"></i>
+               <h5 class="fw-bold">VIP</h5>
+             <p class="mb-0">خدمة متكاملة</p>
+         </div>
+       </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= Offer ================= -->
+<section class="offer-section py-4 mx-3 text-white rounded-4">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+    <div>
+      <h5 class="fw-bold mb-1">عروض خاصة</h5>
+      <p class="mb-0">خصم 20% على الباقة الذهبية</p>
+    </div>
+    <a href="offer.html" class="btn btn-light rounded-pill">شاهد العروض</a>
+  </div>
+</section>
+
+<!-- ================= Reviews Slider ================= -->
+<section class="py-5">
+  <div class="container">
+    <h4 class="fw-bold text-center mb-4">آراء العملاء</h4>
+
+    <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner">
+
+        <!-- Review 1 -->
+        <div class="carousel-item active">
+          <div class="review-card mx-auto">
+            <i class="fa-solid fa-user-circle fa-2x mb-2 text-primary"></i>
+            <p class="mb-1">خدمة ممتازة وسريعة</p>
+            <div class="text-warning">★★★★★</div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="carousel-item">
+          <div class="review-card mx-auto">
+            <i class="fa-solid fa-user-circle fa-2x mb-2 text-primary"></i>
+            <p class="mb-1">نظافة واحترافية عالية</p>
+            <div class="text-warning">★★★★★</div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="carousel-item">
+          <div class="review-card mx-auto">
+            <i class="fa-solid fa-user-circle fa-2x mb-2 text-primary"></i>
+            <p class="mb-1">أفضل مغسلة سيارات</p>
+            <div class="text-warning">★★★★★</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= Footer ================= -->
+<footer class="footer text-white text-center py-4">
+  <p class="mb-1">تواصل معنا</p>
+  <p class="mb-2 d-flex justify-content-center align-items-center gap-2">
+  <span dir="ltr">+966 55 123 4567</span>
+  <i class="fa-solid fa-phone"></i>
+</p>
+
+  <div>
+    <i class="fab fa-twitter mx-2"></i>
+    <i class="fab fa-instagram mx-2"></i>
+    <i class="fab fa-facebook mx-2"></i>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

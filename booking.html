@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>حجز موعد | لمعة برو</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #0d3b66;">
+
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="blue log.png" alt="Logo" class="navbar-logo">
+    </a>
+  </div>
+</nav>
+
+<!-- Header -->
+<section class="page-header text-white text-center py-4" style="background-color: #0d3b66;">
+  <div class="container">
+    <h1 class="fw-bold">حجز موعد</h1>
+    <p class="mb-0">اختر الخدمة وحدد الوقت المناسب لك</p>
+  </div>
+</section>
+
+<!-- Booking Form -->
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+
+        <div class="card booking-card shadow-lg border-0">
+          <div class="card-body p-4">
+
+            <form id="bookingForm">
+
+              <!-- Name -->
+              <div class="mb-3">
+                <label class="form-label">الاسم الكامل</label>
+                <input type="text" class="form-control" placeholder="اكتب اسمك" required>
+              </div>
+
+              <!-- Phone -->
+              <div class="mb-3">
+                <label class="form-label">رقم الجوال</label>
+                <input type="tel" class="form-control" placeholder="05xxxxxxxx" required>
+              </div>
+
+              <!-- Package -->
+              <div class="mb-3">
+                <label class="form-label">اختر الباقة</label>
+                <select class="form-select" id="packageSelect" required>
+                  <option value="">-- اختر --</option>
+                  <option value="basic">أساسي</option>
+                  <option value="gold">ذهبي</option>
+                  <option value="vip">VIP</option>
+                </select>
+              </div>
+
+              <!-- Date -->
+              <div class="mb-3">
+                <label class="form-label">التاريخ</label>
+                <input type="date" class="form-control" required>
+              </div>
+
+              <!-- Time -->
+              <div class="mb-4">
+                <label class="form-label">الوقت</label>
+                <input type="time" class="form-control" required>
+              </div>
+
+              <!-- Price Display -->
+              <div class="alert alert-light text-center fw-bold mb-4">
+                المبلغ الإجمالي: <span id="totalPrice" class="text-success">0 ريال</span>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="mb-4">
+                <label class="form-label fw-bold">طريقة الدفع</label>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="radio" name="payment" id="mada" required>
+                  <label class="form-check-label" for="mada">
+                    <i class="fa-solid fa-credit-card me-1"></i> مدى
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="radio" name="payment" id="visa">
+                  <label class="form-check-label" for="visa">
+                    <i class="fa-brands fa-cc-visa me-1"></i> فيزا / ماستر
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="payment" id="applepay">
+                  <label class="form-check-label" for="applepay">
+                    <i class="fa-brands fa-apple me-1"></i> Apple Pay
+                  </label>
+                </div>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn-gold w-100 rounded-pill py-2">
+                <i class="fa-solid fa-lock me-1"></i>
+                تأكيد الحجز والدفع
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-white text-center py-3" style="background-color: #0d3b66;">
+  <small>© 2026 لمعة برو</small>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Dynamic Price Script -->
+<script>
+  const prices = {
+    basic: 35,
+    gold: 49,
+    vip: 70
+  };
+
+  const packageSelect = document.getElementById('packageSelect');
+  const totalPrice = document.getElementById('totalPrice');
+  const bookingForm = document.getElementById('bookingForm');
+
+  packageSelect.addEventListener('change', function() {
+    const selected = packageSelect.value;
+    totalPrice.textContent = prices[selected]
+      ? prices[selected] + " ريال"
+      : "0 ريال";
+  });
+
+  bookingForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // يمنع إعادة تحميل الصفحة
+
+    const modal = new bootstrap.Modal(
+      document.getElementById('successModal')
+    );
+    modal.show();
+
+    bookingForm.reset();
+    totalPrice.textContent = "0 ريال";
+  });
+</script>
+
+   <!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-body py-5">
+        <i class="fa-solid fa-circle-check text-success fa-3x mb-3"></i>
+        <h5 class="fw-bold mb-2">تم الحجز بنجاح 🎉</h5>
+        <p class="mb-4">شكراً لك، تم تأكيد حجزك بنجاح</p>
+        <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">
+          حسناً
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
